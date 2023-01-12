@@ -171,7 +171,7 @@ func (c *Core) LearnArticle(user *model.User) {
 				c.Push(user.PushId, "text", "正在学习文章："+links[n].Title)
 				log.Infoln("文章发布时间：" + links[n].PublishTime)
 				log.Infoln("文章学习链接：" + links[n].Url)
-				learnTime := 60 + rand.Intn(15) + 3
+				learnTime := 90 + rand.Intn(30) + 3
 				for i := 0; i < learnTime; i++ {
 					if c.IsQuit() {
 						return
@@ -282,7 +282,7 @@ func (c *Core) LearnVideo(user *model.User) {
 				c.Push(user.PushId, "text", "正在观看视频："+links[n].Title)
 				log.Infoln("视频发布时间：" + links[n].PublishTime)
 				log.Infoln("视频学习链接：" + links[n].Url)
-				learnTime := 60 + rand.Intn(10)
+				learnTime := 90 + rand.Intn(60)
 				for i := 0; i < learnTime; i++ {
 					if c.IsQuit() {
 						return
